@@ -7,6 +7,26 @@
     <title>Activity 1</title>
     <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="../src/assets/styles.css">
+    <script>
+        function addRow() {
+            const table = document.querySelector("tbody");
+            const newRow = document.createElement("tr");
+            newRow.classList.add("border-b", "border-gray-200", "hover:bg-gray-300", "hover:text-white");
+            newRow.innerHTML = `
+                <td class="py-3 px-4">New Song</td>
+                <td class="py-3 px-4">New Artist</td>
+                <td class="py-3 px-4">0000</td>
+                <td class="py-3 px-4 text-center">
+                    <button onclick="deleteRow(this)" class="bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+                </td>
+            `;
+            table.appendChild(newRow);
+        }
+
+        function deleteRow(button) {
+            button.parentElement.parentElement.remove();
+        }
+    </script>
 </head>
 
 <body class="bg-gray-100 p-6">
@@ -67,31 +87,10 @@
             </tbody>
         </table>
     </div>
-        
+
     <footer class="bg-gray-100 text-center py-4 mt-auto">
         <p class="text-gray-700">&copy; 2024. All rights reserved.</p>
     </footer>
-
-    <script>
-        function addRow() {
-            const table = document.querySelector("tbody");
-            const newRow = document.createElement("tr");
-            newRow.classList.add("border-b", "border-gray-200", "hover:bg-gray-300", "hover:text-white");
-            newRow.innerHTML = `
-                <td class="py-3 px-4">New Song</td>
-                <td class="py-3 px-4">New Artist</td>
-                <td class="py-3 px-4">0000</td>
-                <td class="py-3 px-4 text-center">
-                    <button onclick="deleteRow(this)" class="bg-red-500 text-white py-1 px-2 rounded">Delete</button>
-                </td>
-            `;
-            table.appendChild(newRow);
-        }
-
-        function deleteRow(button) {
-            button.parentElement.parentElement.remove();
-        }
-    </script>
 </body>
 
 </html>
