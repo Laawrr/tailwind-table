@@ -1,0 +1,16 @@
+table {
+    border-bottom: 3px solid transparent;
+    animation: borderBottomColor 2s linear infinite;
+  }
+
+@keyframes borderBottomColor {
+    0% {
+      border-bottom-color: transparent;
+    }
+    50% {
+      border-bottom-color: #3e3f41; /* Blue color */
+    }
+    100% {
+      border-bottom-color: transparent;
+    }
+  }
